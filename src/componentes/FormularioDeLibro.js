@@ -47,7 +47,9 @@ const FormularioDeLibro = (props) => {
       return valor !== '' && valor !== '0';
     });
 
-
+    // validacion de que todos los campos esten llenos
+    // de no ser asi sale el mensaje de error
+    //
     if (todosLosCamposLlenos) {
       const libro = {
         id: uuidv4(),
@@ -64,7 +66,11 @@ const FormularioDeLibro = (props) => {
     setErrorMsg(errorMsg);
   };
 
+  // es un contralador de eventos cuando se escribe 
+  // algo dentro de los inputs
   const handleInputChange = (event) => {
+    // esta traendo los datos de event target
+    
     const { nombre, valor } = event.target;
     switch (nombre) {
       case 'cantidad':
