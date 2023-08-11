@@ -70,11 +70,17 @@ const FormularioDeLibro = (props) => {
   // algo dentro de los inputs
   const handleInputChange = (event) => {
     // esta traendo los datos de event target
-    
+    /// desestructuramos los objetos
     const { nombre, valor } = event.target;
+    // nombre es igual a name en el input
+    // usamos switch para ver muchos casos
     switch (nombre) {
+      // en el primer caso es cantidad
       case 'cantidad':
+        // donde validamos que no este vacio y lo convertimos
+        // en numero con paseint
         if (valor === '' || parseInt(valor) === +valor) {
+          // despues usamos el estado setLibro para actualizar el estado
           setLibro((prevState) => ({
             ...prevState,
             [nombre]: valor
