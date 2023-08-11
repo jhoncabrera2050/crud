@@ -37,7 +37,8 @@ const FormularioDeLibro = (props) => {
     const valores = [nombrelibro, autor, precio, cantidad];
     let errorMsg = '';
 
-    //
+    // se creo una variable que recooree si todos los campos estan
+    // llenos
     const todosLosCamposLlenos = valores.every((campo) => {
       // plantillas literales de javascript
       // `${campo}` lo convierte en una cadena
@@ -45,6 +46,7 @@ const FormularioDeLibro = (props) => {
       const valor = `${campo}`.trim();
       return valor !== '' && valor !== '0';
     });
+
 
     if (todosLosCamposLlenos) {
       const libro = {
